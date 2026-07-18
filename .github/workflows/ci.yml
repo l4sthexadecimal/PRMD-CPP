@@ -1,0 +1,35 @@
+name: CI
+
+# Compila la biblioteca, corre las pruebas exactas y valida ambos backends
+# (racional y fraction-free) en cada push y pull request.
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar dependencias
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            cmake ninja-build g++ \
+            libgmp-dev libeigen3-dev libflint-dev \
+            libgtest-dev doxygen graphviz
+
+      - name: Configurar
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+      - name: Compilar
+        run: cmake --build build --parallel
+
+      - name: Ejecutar pruebas
+        run: ctest --test-dir build --output-on-failure
+
+      - name: Generar documentacion
+        run: cmake --build build --target docs

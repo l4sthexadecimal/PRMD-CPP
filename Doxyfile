@@ -1,0 +1,30 @@
+# Configuracion de Doxygen para DescMatRat.
+# Generar con: doxygen Doxyfile   (o bien: cmake --build build --target docs)
+
+PROJECT_NAME           = "DescMatRat"
+PROJECT_BRIEF          = "Descomposicion racional de matrices con invariantes por bloques"
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS         = NO
+
+# Entradas: cabeceras de la biblioteca y el README como pagina adicional.
+# La portada es el bloque \mainpage de descmatrat.hpp.
+INPUT                  = include README.md
+FILE_PATTERNS          = *.hpp *.h
+RECURSIVE              = YES
+
+# Extraer toda la documentacion, en espanol.
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+OUTPUT_LANGUAGE        = Spanish
+JAVADOC_AUTOBRIEF      = YES
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = NO
+
+# Salidas.
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+# Diagramas con Graphviz si esta disponible.
+HAVE_DOT               = YES
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO

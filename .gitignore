@@ -1,0 +1,17 @@
+# Artefactos de compilacion
+build/
+cmake-build-*/
+out/
+
+# Documentacion generada
+docs/
+
+# Archivos de editores e IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db

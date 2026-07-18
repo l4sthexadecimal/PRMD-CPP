@@ -1,0 +1,7 @@
+# Estilo de formato del proyecto: base Google con sangria de 4 espacios y
+# limite de columna de 100. Aplicar con: clang-format -i <archivos>
+BasedOnStyle: Google
+IndentWidth: 4
+ColumnLimit: 100
+DerivePointerAlignment: false
+PointerAlignment: Left
