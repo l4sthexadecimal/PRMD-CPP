@@ -4,7 +4,6 @@ Descomposicion racional de matrices con invariantes por bloques, en **aritmetica
 exacta** sobre los numeros racionales.
 
 <!-- Reemplaza OWNER/REPO por tu usuario y repositorio para que el badge funcione. -->
-![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)
 
 DescMatRat toma una matriz racional cuadrada `A` y calcula, sin ningun
 redondeo:
